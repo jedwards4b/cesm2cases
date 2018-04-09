@@ -12,7 +12,10 @@ preview_namelists
 preview_run
 xmlchange
 xmlquery
-
+.case.run
+.env_mach_specific.*
+CaseDocs
+case.st_archive
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
