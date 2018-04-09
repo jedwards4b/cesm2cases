@@ -1,8 +1,7 @@
 # cesm2cases
 
-This README is for storing your cesm2 case in your own
-git repository.  It is a lightweight way for the cesm experimentor to
-keep track of cases.
+This repository is a template for storing your cesm2 case using git.
+It is a lightweight way for the cesm experimentor to keep track of cases.
 
 1. Create a cesm2cases fork on github - you only need to do this once.   You are forking the
     repository at https://github.com/jedwards4b/cesm2cases
