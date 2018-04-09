@@ -1,0 +1,4 @@
+
+                Put source mods for the glimmer-cism library in the glimmer-cism subdirectory
+                This includes any files that are in the glimmer-cism subdirectory of $cimeroot/../components/cism
+                Anything else (e.g., mods to source_glc or drivers) goes in this directory, NOT in glimmer-cism/

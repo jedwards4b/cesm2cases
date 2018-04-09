@@ -59,7 +59,7 @@
       <type>integer</type>
       <desc>number of ice cells in j direction - DO NOT EDIT (for experts only)</desc>
     </entry>
-    <entry id="ICE_NCAT" value="1">
+    <entry id="ICE_NCAT" value="5">
       <type>integer</type>
       <desc>number of ice thickness categories - DO NOT EDIT (set by CICE configure)</desc>
     </entry>
@@ -316,7 +316,7 @@
     </entry>
   </group>
   <group id="build_component_cam">
-    <entry id="CAM_CPPDEFS" value="UNSET">
+    <entry id="CAM_CPPDEFS" value="    -DPLON=288 -DPLAT=192 -DPLEV=32 -DPCNST=37 -DPCOLS=16 -DPSUBCOLS=1 -DN_RAD_CNST=30 -DPTRM=1 -DPTRN=1 -DPTRK=1 -DSPMD -DMODAL_AERO -DMODAL_AERO_4MODE  -DCLUBB_SGS -DCLUBB_CAM -DNO_LAPACK_ISNAN -DCLUBB_REAL_TYPE=dp -DHAVE_VPRINTF -DHAVE_TIMES -DHAVE_GETTIMEOFDAY -DHAVE_COMM_F2C -DHAVE_NANOTIME -DBIT64 -DHAVE_SLASHPROC">
       <type>char</type>
       <valid_values/>
       <desc>CAM cpp definitions (setup automatically - DO NOT EDIT)</desc>
@@ -369,7 +369,7 @@
       can manually set the values of CICE_BLCKX, CICE_BLCKY, CICE_MXBLCKS,
       CICE_DECOMPTYPE, and CICE_DECOMPSETTING".</desc>
     </entry>
-    <entry id="CICE_BLCKX" value="0">
+    <entry id="CICE_BLCKX" value="16">
       <type>integer</type>
       <valid_values/>
       <desc>Size of cice block in first horiz dimension
@@ -377,7 +377,7 @@
       This is for experts only - automatically set if CICE_AUTO_DECOMP
       is true to set this value, must first set CICE_AUTO_DECOMP to false.</desc>
     </entry>
-    <entry id="CICE_BLCKY" value="0">
+    <entry id="CICE_BLCKY" value="16">
       <type>integer</type>
       <valid_values/>
       <desc>Size of cice block in second horiz dimension
@@ -385,14 +385,14 @@
       This is for experts only - automatically set if CICE_AUTO_DECOMP is true,
       to set this value, must first set CICE_AUTO_DECOMP to false.</desc>
     </entry>
-    <entry id="CICE_MXBLCKS" value="0">
+    <entry id="CICE_MXBLCKS" value="7">
       <type>integer</type>
       <valid_values/>
       <desc>Max number of cice blocks per processor (do not edit if CICE_AUTO_DECOMP is true)
       This is for experts only - automatically set if CICE_AUTO_DECOMP is true,
       to set this value, must first set CICE_AUTO_DECOMP to false.</desc>
     </entry>
-    <entry id="CICE_DECOMPTYPE" value="null">
+    <entry id="CICE_DECOMPTYPE" value="sectrobin">
       <type>char</type>
       <valid_values>cartesian,rake,sectrobin,spacecurve,roundrobin,sectrobin,sectcart,null</valid_values>
       <desc>cice block distribution type (do not edit if CICE_AUTO_DECOMP is true)
@@ -406,7 +406,7 @@
       This is for experts only - automatically set if CICE_AUTO_DECOMP is true,
       to set this value, must first set CICE_AUTO_DECOMP to false.</desc>
     </entry>
-    <entry id="CICE_CPPDEFS" value="UNSET">
+    <entry id="CICE_CPPDEFS" value=" -DCESMCOUPLED -Dncdf -DNUMIN=11 -DNUMAX=99  -DNICECAT=5 -DNXGLOB=320 -DNYGLOB=384 -DNTRAERO=3 -DNTRISO=0 -DNBGCLYR=3 -DNICELYR=8 -DNSNWLYR=3 -DTRAGE=1 -DTRFY=1 -DTRLVL=1 -DTRPND=1 -DTRBRI=0 -DTRBGCS=0 -DBLCKX=16 -DBLCKY=16 -DMXBLCKS=7">
       <type>char</type>
       <valid_values/>
       <desc>CICE cpp definitions (setup automatically - DO NOT EDIT)</desc>
@@ -433,42 +433,42 @@
       <valid_values>TRUE,FALSE</valid_values>
       <desc>if FALSE, user must set the POP decomp, otherwise cesm_setup script sets it</desc>
     </entry>
-    <entry id="POP_BLCKX" value="0">
+    <entry id="POP_BLCKX" value="27">
       <type>integer</type>
       <valid_values/>
       <desc>Size of pop block in first horiz dimension (do not edit if POP_AUTO_DECOMP is TRUE)</desc>
     </entry>
-    <entry id="POP_BLCKY" value="0">
+    <entry id="POP_BLCKY" value="32">
       <type>integer</type>
       <valid_values/>
       <desc>Size of pop block in second horiz dimension (do not edit if POP_AUTO_DECOMP is TRUE)</desc>
     </entry>
-    <entry id="POP_NX_BLOCKS" value="0">
+    <entry id="POP_NX_BLOCKS" value="12">
       <type>integer</type>
       <valid_values/>
       <desc>Number of pop blocks in first horiz dimension (do not edit if POP_AUTO_DECOMP is TRUE)</desc>
     </entry>
-    <entry id="POP_NY_BLOCKS" value="0">
+    <entry id="POP_NY_BLOCKS" value="12">
       <type>integer</type>
       <valid_values/>
       <desc>Number of pop blocks in second horiz dimension (do not edit if POP_AUTO_DECOMP is TRUE)</desc>
     </entry>
-    <entry id="POP_MXBLCKS" value="0">
+    <entry id="POP_MXBLCKS" value="1">
       <type>integer</type>
       <valid_values/>
       <desc>Max number of pop blocks per processor (do not edit if POP_AUTO_DECOMP is TRUE</desc>
     </entry>
-    <entry id="POP_DECOMPTYPE" value="0">
+    <entry id="POP_DECOMPTYPE" value="cartesian">
       <type>char</type>
       <valid_values/>
       <desc>pop block distribution type (do not edit if POP_AUTO_DECOMP is TRUE)</desc>
     </entry>
-    <entry id="POP_CPPDEFS" value="UNSET">
+    <entry id="POP_CPPDEFS" value="-DCCSMCOUPLED -DMARBL_TIMING_OPT=CIME -DBLCKX=27 -DBLCKY=32 -DMXBLCKS=1 -DNT=35 -DMARBL_NT=32 -DIRF_NT=0 ">
       <type>char</type>
       <valid_values/>
       <desc>POP cpp definitions (for diagnostic use only, setup automatically, overwritten by configure_pop.py - DO NOT EDIT)</desc>
     </entry>
-    <entry id="MARBL_NT" value="0">
+    <entry id="MARBL_NT" value="32">
       <type>integer</type>
       <valid_values/>
       <desc>pop marbl tracer count (this is runtime configurable in marbl but not in pop - do not edit)</desc>
