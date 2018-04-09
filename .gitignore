@@ -1,3 +1,19 @@
+#cesm2case specific stuff
+Tools
+case.build
+case.cmpgen_namelists
+case.qstatus
+case.setup
+case.submit
+check_case
+check_input_data
+pelayout
+preview_namelists
+preview_run
+xmlchange
+xmlquery
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
